@@ -21,4 +21,21 @@ jQuery(function($) {
 
   });
 
+  $(".food-container .food .ingredients .ingredients-list .guess button").click(function() {
+
+    if($(this).parent().find("input").val() == $(this).parent().next(".sugarcubes").attr("cubes")) {
+
+      $(this).parent().parent().find(".sugar").html("Ügyes 😊!");
+
+    }else {
+
+      $(this).parent().parent().find(".sugar").html("Nem talált 😞.");
+
+    }
+
+    $(this).parent().fadeOut();
+    $(this).parent().parent().find(".sugarcubes").fadeIn();
+
+  });
+
 });
